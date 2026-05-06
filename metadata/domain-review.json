@@ -1,0 +1,73 @@
+{
+  "repo": "cobalt-ui-table-line",
+  "language": "Lua",
+  "category": "Frontend apps",
+  "goal": "Develop a Lua command-oriented project for table scenarios with transition tables, invalid-transition tests, and offline replay mode.",
+  "review_model": {
+    "terms": [
+      "view drift",
+      "state pressure",
+      "layout risk",
+      "interaction cost"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "view drift",
+      "signal": 46,
+      "slack": 28,
+      "drag": 24,
+      "confidence": 61,
+      "score": 109,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "state pressure",
+      "signal": 54,
+      "slack": 53,
+      "drag": 16,
+      "confidence": 61,
+      "score": 174,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "layout risk",
+      "signal": 57,
+      "slack": 22,
+      "drag": 12,
+      "confidence": 49,
+      "score": 149,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "interaction cost",
+      "signal": 86,
+      "slack": 35,
+      "drag": 28,
+      "confidence": 58,
+      "score": 181,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "view drift",
+      "signal": 77,
+      "slack": 23,
+      "drag": 32,
+      "confidence": 85,
+      "score": 166,
+      "lane": "ship"
+    }
+  ]
+}
